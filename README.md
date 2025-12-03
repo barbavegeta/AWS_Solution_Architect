@@ -1,4 +1,4 @@
-# Solution Architect – AWS Migration Design  
+# Solution Architect - AWS Migration Design  
 High-level AWS architecture design for migrating two on‑premises workloads, a three‑tier web application and a Hadoop‑based analytics environment, into a cloud‑native, fully managed solution on AWS.  
 - The focus is on **scalability**, **high availability**, **security**, and **reduced operational overhead** by leaning on managed services instead of self‑managed infrastructure.
 ---
@@ -20,7 +20,7 @@ The diagram shows:
 ---
 ## Web Application Architecture (Three‑Tier Design)
 ### Edge & Frontend
-- **Amazon S3 – Static Website Hosting**  
+- **Amazon S3 - Static Website Hosting**  
   Hosts static assets (HTML/CSS/JS) for the web front‑end.
 - **Amazon CloudFront**  
   Global CDN distribution over HTTPS for low‑latency content delivery.
@@ -30,7 +30,7 @@ The diagram shows:
 - **Application Load Balancer (ALB)**  
   - Terminates HTTPS from CloudFront.
   - Routes dynamic `/api` traffic to the containerised backend.
-- **Amazon ECS on Fargate – Java App**  
+- **Amazon ECS on Fargate - Java App**  
   - Runs stateless Java microservices as containers.
   - Auto‑scales based on traffic and CPU/memory metrics.
   - No EC2 server management.
@@ -41,7 +41,7 @@ The diagram shows:
   - Asynchronous decoupling of backend tasks (e.g. emails, report generation, ETL triggers).
   - Improves responsiveness of the synchronous API.
 ### Database Layer
-- **Amazon Aurora MySQL – Multi‑AZ**  
+- **Amazon Aurora MySQL - Multi‑AZ**  
   - Managed relational database with automatic backups, failover and replication.
   - Multi‑AZ deployment for high availability.
 - **AWS Secrets Manager**  
